@@ -1,0 +1,19 @@
+{% extends "layout.html"%}
+
+{% block body %}
+    <form action="/new" method="post">
+        <input id="input" type="text" name="task"  placeholder="Task Name">
+        <input id="submit" type="submit">
+    </form>
+    <script>
+        document.getElementById("#input").onkeyup= function(){
+            if (document.getElementById("#input").value === ""){
+               return document.getElementById("#submit").disabled =true;
+            }
+            else{
+               return document.getElementById("#submit").disabled =false;
+            }
+        }
+
+    </script>
+{% endblock %}
